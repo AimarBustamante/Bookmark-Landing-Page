@@ -41,8 +41,8 @@ Want some support on the challenge? [Join our Slack community](https://www.front
 
 ### Links
 
-- [Solution](https://www.frontendmentor.io/solutions/age-calculator-app-m8A69SUIQo)
-- [Live Site](https://aimarbustamante.github.io/Age-calculator-app/)
+- [Solution](https://www.frontendmentor.io/solutions/bookmark-landing-page-LEEG7WDlCD)
+- [Live Site](https://aimarbustamante.github.io/Bookmark-Landing-Page/)
 
 ## Color Reference
 
