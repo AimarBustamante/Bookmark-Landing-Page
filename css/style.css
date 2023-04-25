@@ -785,4 +785,18 @@
         gap: 2.5rem;
     }
 
+    .attribution{
+        text-align: center;
+        color: #FFF;
+        padding-bottom: 1rem;
+    }
+
+    .attribution-link{
+        transition: .25s;
+    }
+
+    .attribution-link:hover{
+        color: var(--softRed);
+    }
+
 }
