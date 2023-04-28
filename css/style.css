@@ -545,6 +545,20 @@
     gap: 2rem;
 }
 
+.attribution{
+    text-align: center;
+    color: #FFF;
+    padding-bottom: 1rem;
+}
+
+.attribution-link{
+    transition: .25s;
+}
+
+.attribution-link:hover{
+    color: var(--softRed);
+}
+
 /** ----- Responsive for PC ----- **/
 
 @media(min-width: 768px){
@@ -783,20 +797,6 @@
     .footer__media{
         margin-left: auto;
         gap: 2.5rem;
-    }
-
-    .attribution{
-        text-align: center;
-        color: #FFF;
-        padding-bottom: 1rem;
-    }
-
-    .attribution-link{
-        transition: .25s;
-    }
-
-    .attribution-link:hover{
-        color: var(--softRed);
     }
 
 }
