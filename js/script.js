@@ -1,84 +1,57 @@
-// Variables
+// Nav Menu
 
-const navButton = document.querySelector(".nav__button");
-const navMenu = document.querySelector(".nav__container");
+const sideMenu = document.getElementById("side-menu");
 
-const tabButtons = document.querySelectorAll(".features__tab")
-
-const clickQuestions = document.querySelectorAll(".article__question")
-
-// Nav Menu Function
-navButton.addEventListener('click', ()=>{
-
-    const navLogo = document.querySelector('.nav__logo');
-    navMenu.classList.toggle('nav__container--active');
-
-    if(navMenu.classList.contains('nav__container--active')){
-        navLogo.setAttribute('src', './images/logo-bookmark-white.svg');
-        navButton.setAttribute('src', '././images/icon-close.svg');
-    }else{
-        navLogo.setAttribute('src', './images/logo-bookmark.svg');
-        navButton.setAttribute('src', '././images/icon-hamburger.svg');
-    }
-
-});
-
-// Tab Buttons Functions
-
-const removeActiveElements = (selector) =>{
-    const elementsActive = document.querySelectorAll(`.${selector}`);
-
-    if (elementsActive.length){
-        elementsActive.forEach(elementActive =>{
-            elementActive.classList.remove(selector)
-        })
-    }
+function openMenu () {
+    sideMenu.style.right = "0";
 }
 
-tabButtons.forEach(tabButton =>{
-    tabButton.addEventListener('click', (e)=>{
-        e.preventDefault();
+function closeMenu() {
+    sideMenu.style.right = "-50%";
+}
 
-        if(!tabButton.classList.contains('features__tab--active')){
-            
-            const articleNumber = tabButton.getAttribute('data-article');
+// Language Toggler
 
-            const articleShow = document.querySelector(`.features__article:nth-of-type(${articleNumber})`);
+const check = document.querySelector(".toggler");
 
-            console.log(articleNumber);
+check.addEventListener("click",language);
 
-            removeActiveElements('features__article--active');
-            removeActiveElements('features__tab--active');
+function language(){
+    location.href = (check.checked) ? "../es/index.html" : "../index.html";
+}
 
+// To top btn
 
-            articleShow.classList.add('features__article--active');
-            tabButton.classList.add('features__tab--active');
+const scrollTopButton = document.querySelector("#scroll-top-button");
+const nav = document.querySelector("#nav");
 
-        }
-    })
-});
+const onScroll = (event) => {
+    const scrollPosition = event.target.scrollingElement.scrollTop;
 
-// FAQ Function
+    scrollTopButton.classList.toggle("visible", scrollPosition > 0);
+    nav.classList.toggle("scrolled", scrollPosition > 0);
+};
 
-clickQuestions.forEach(clickQuestion => {
-    clickQuestion.addEventListener("click", ()=>{
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
-        const arrow = clickQuestion.children[0];
-        arrow.classList.toggle("article__arrow--rotate")
+document.addEventListener("scroll", onScroll);
 
-        const answerContainer = clickQuestion.nextElementSibling;
-        answerContainer.classList.toggle("article__content--show")
-        console.log();
-    });
-});
+// Load More
 
-window.addEventListener("resize", ()=>{
-    const isMenuActive = document.querySelector(".nav__container--active")
+// Scroll Reveal
 
-    if (isMenuActive) {
-        const navLogo = document.querySelector('.nav__logo');
-        navMenu.classList.remove("nav__container--active")
-        navLogo.setAttribute('src', './images/logo-bookmark.svg');
-        navButton.setAttribute('src', '././images/icon-hamburger.svg');
-    }
-})
+ScrollReveal().reveal('nav');
+ScrollReveal().reveal('#header', { delay: 500 });
+ScrollReveal().reveal('.header-text', { delay: 1000 });
+ScrollReveal().reveal('#about', { delay: 500 });
+ScrollReveal().reveal('.about-col-1', { delay: 1000 });
+ScrollReveal().reveal('.about-col-2', { delay: 1500 });
+ScrollReveal().reveal('#services', { delay: 500 });
+ScrollReveal().reveal('.services-list', { delay: 1000 });
+ScrollReveal().reveal('#portfolio', { delay: 500 });
+ScrollReveal().reveal('.work-list', { delay: 1000 });
+ScrollReveal().reveal('#contact', { delay: 500 });
+ScrollReveal().reveal('.contact-left', { delay: 1000 });
+ScrollReveal().reveal('.contact-right', { delay: 1500 });
